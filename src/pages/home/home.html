@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic 2 Contacts
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-searchbar (ionInput)="findContact($event)" placeholder="Enter display name"></ion-searchbar>
+
+	<ion-list [hidden]="!search">
+		<ion-item *ngFor="let item of contactsfound">{{item.displayName}}</ion-item>
+	</ion-list>
+	
+</ion-content>
+
+<ion-footer no-border>
+	<button ion-button block (click)="newContact()">Add Contact</button>
+</ion-footer>
